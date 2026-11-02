@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TuEmpleadoIA | Consultoría en Fuerza Laboral Digital</title>
+<meta name="description" content="Implementamos equipos de empleados de inteligencia artificial para empresas en Latinoamérica. Project Management, Logística, Finanzas, RR.HH. y más.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0b1a33;--gold:#c9a961;--ink:#1a1a1a;--paper:#faf8f4;--line:#e5e0d5}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+  header{background:var(--navy);color:#fff;padding:20px 0;position:sticky;top:0;z-index:50;border-bottom:2px solid var(--gold)}
+  nav{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;letter-spacing:.5px}
+  .logo span{color:var(--gold)}
+  nav ul{display:flex;gap:32px;list-style:none}
+  nav a{color:#fff;text-decoration:none;font-size:.9rem;font-weight:400;transition:.3s}
+  nav a:hover{color:var(--gold)}
+  .btn{display:inline-block;padding:14px 32px;background:var(--gold);color:var(--navy);text-decoration:none;font-weight:600;font-size:.9rem;border-radius:2px;transition:.3s;border:none;cursor:pointer}
+  .btn:hover{background:#d4b876;transform:translateY(-2px)}
+  .btn-outline{background:transparent;border:1.5px solid var(--gold);color:var(--gold)}
+  .btn-outline:hover{background:var(--gold);color:var(--navy)}
+  .hero{background:var(--navy);color:#fff;padding:120px 0 100px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,169,97,.15),transparent 70%);border-radius:50%}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;position:relative}
+  .hero h1{font-size:3.2rem;margin-bottom:24px}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero p{font-size:1.15rem;color:#c5cdd9;margin-bottom:36px;font-weight:300}
+  .hero-badge{display:inline-block;padding:8px 18px;border:1px solid var(--gold);color:var(--gold);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+  .metrics{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.15)}
+  .metric-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold)}
+  .metric-label{font-size:.75rem;color:#8896ab;text-transform:uppercase;letter-spacing:1px}
+  section{padding:100px 0}
+  .section-head{text-align:center;max-width:700px;margin:0 auto 64px}
+  .section-head h2{font-size:2.4rem;margin-bottom:16px}
+  .section-head p{color:#666;font-size:1.05rem}
+  .eyebrow{color:var(--gold);font-size:.8rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;margin-bottom:12px;display:block}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .card{background:#fff;padding:36px 32px;border:1px solid var(--line);transition:.3s;position:relative}
+  .card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(11,26,51,.2)}
+  .card-icon{width:48px;height:48px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-family:'Playfair Display',serif;font-size:1.3rem}
+  .card h3{font-size:1.3rem;margin-bottom:12px}
+  .card .ref{font-size:.75rem;color:var(--gold);font-style:italic;margin-bottom:14px;display:block}
+  .card p{font-size:.92rem;color:#555}
+  .card ul{list-style:none;margin-top:16px;font-size:.88rem;color:#555}
+  .card ul li{padding-left:18px;position:relative;margin-bottom:6px}
+  .card ul li::before{content:'→';position:absolute;left:0;color:var(--gold)}
+  .process{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:step}
+  .step{padding:32px;border-right:1px solid var(--line);counter-increment:step;position:relative}
+  .step:last-child{border-right:none}
+  .step::before{content:'0' counter(step);font-family:'Playfair Display',serif;font-size:3rem;color:var(--line);position:absolute;top:16px;right:20px}
+  .step h3{font-size:1.1rem;margin-bottom:10px}
+  .step p{font-size:.88rem;color:#666}
+  .cta{background:var(--navy);color:#fff;text-align:center;padding:100px 0}
+  .cta h2{font-size:2.6rem;margin-bottom:20px}
+  .cta p{color:#c5cdd9;max-width:600px;margin:0 auto 36px;font-weight:300}
+  footer{background:#081224;color:#8896ab;padding:60px 0 30px;font-size:.88rem}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .foot-grid h4{color:#fff;font-family:'Inter',sans-serif;font-size:.85rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;font-weight:600}
+  .foot-grid a{color:#8896ab;text-decoration:none;display:block;margin-bottom:8px;transition:.2s}
+  .foot-grid a:hover{color:var(--gold)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  @media(max-width:900px){
+    .hero-grid,.cards,.steps,.foot-grid{grid-template-columns:1fr}
+    .hero h1{font-size:2.2rem}
+    nav ul{display:none}
+    .step{border-right:none;border-bottom:1px solid var(--line)}
+    .metrics{flex-wrap:wrap;gap:24px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <div class="logo">TuEmpleado<span>IA</span></div>
+    <ul>
+      <li><a href="#equipo">Equipo IA</a></li>
+      <li><a href="#proceso">Metodología</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="btn">Solicitar Diagnóstico</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-badge">Fuerza Laboral Digital · LATAM</span>
+      <h1>Su empresa merece un equipo que <em>nunca duerme</em>.</h1>
+      <p>Implementamos empleados de inteligencia artificial especializados en las funciones críticas de su operación: gestión de proyectos, logística, finanzas, recursos humanos, ventas y control de almacén. Basados en metodologías probadas y estándares internacionales.</p>
+      <a href="#equipo" class="btn">Conocer el Equipo IA</a>
+      <a href="#contacto" class="btn btn-outline" style="margin-left:12px">Hablar con un Asesor</a>
+      <div class="metrics">
+        <div><div class="metric-num">6+</div><div class="metric-label">Roles Especializados</div></div>
+        <div><div class="metric-num">4</div><div class="metric-label">Países en Expansión</div></div>
+        <div><div class="metric-num">24/7</div><div class="metric-label">Operación Continua</div></div>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <div style="width:100%;aspect-ratio:1;background:linear-gradient(135deg,#152a4a,#0b1a33);border:1px solid rgba(201,169,97,.3);display:flex;align-items:center;justify-content:center;position:relative">
+        <div style="position:absolute;inset:20px;border:1px solid rgba(201,169,97,.15)"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:5rem;color:var(--gold);opacity:.9">IA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipo">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nuestro Equipo</span>
+      <h2>Empleados IA con formación real</h2>
+      <p>Cada rol está diseñado sobre marcos metodológicos reconocidos y adaptado a la realidad regulatoria y operativa de Latinoamérica.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">PM</div>
+        <h3>Project Manager IA</h3>
+        <span class="ref">Basado en PMBOK® · PMI</span>
+        <p>Planifica, ejecuta y monitorea proyectos con estándares internacionales de gestión.</p>
+        <ul>
+          <li>Gestión de cronograma y presupuesto</li>
+          <li>Control de riesgos e interesados</li>
+          <li>Reportes ejecutivos automatizados</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">LG</div>
+        <h3>Especialista Logístico IA</h3>
+        <span class="ref">Basado en SCOR® · Supply Chain Council</span>
+        <p>Optimiza la cadena de suministro con modelos de referencia internacionales.</p>
+        <ul>
+          <li>Planificación de demanda y abastecimiento</li>
+          <li>Optimización de rutas y costos</li>
+          <li>Indicadores de nivel de servicio</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">CF</div>
+        <h3>Contador IA</h3>
+        <span class="ref">Basado en NIIF · Normas Internacionales</span>
+        <p>Control de gastos, cobranzas y conciliaciones con precisión contable.</p>
+        <ul>
+          <li>Gestión de cuentas por cobrar y pagar</li>
+          <li>Conciliación bancaria automatizada</li>
+          <li>Reportes financieros mensuales</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">RH</div>
+        <h3>Planillero IA</h3>
+        <span class="ref">Adaptado a normativa laboral peruana y regional</span>
+        <p>Gestiona planillas, beneficios sociales y obligaciones laborales.</p>
+        <ul>
+          <li>Cálculo de planilla y CTS</li>
+          <li>Control de asistencia y vacaciones</li>
+          <li>Cumplimiento SUNAFIL / equivalentes</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">MK</div>
+        <h3>Equipo de Marketing IA</h3>
+        <span class="ref">Basado en funnel AIDA · Inbound Marketing</span>
+        <p>Cubre el ciclo completo de ventas: pre-venta, venta y post-venta.</p>
+        <ul>
+          <li>Generación de prospectos calificados</li>
+          <li>Seguimiento automatizado de oportunidades</li>
+          <li>Fidelización y reactivación de clientes</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">AL</div>
+        <h3>Almacenero IA</h3>
+        <span class="ref">Basado en 5S · Control de inventarios ABC</span>
+        <p>Control de materiales, herramientas y trazabilidad de stock.</p>
+        <ul>
+          <li>Registro de entradas y salidas</li>
+          <li>Alertas de stock mínimo y obsolescencia</li>
+          <li>Inventario cíclico y valorización</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="proceso">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Metodología</span>
+      <h2>De la consulta al empleado operando en 4 pasos</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Diagnóstico</h3><p>Identificamos el rol o roles que generan mayor impacto en su operación.</p></div>
+      <div class="step"><h3>Configuración</h3><p>Adaptamos el empleado IA a sus procesos, normativa y sistemas existentes.</p></div>
+      <div class="step"><h3>Integración</h3><p>Conectamos con su CRM, ERP o herramientas de gestión actuales.</p></div>
+      <div class="step"><h3>Operación</h3><p>Su empleado IA comienza a operar con supervisión y reportes periódicos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="container">
+    <h2>Conversemos sobre su fuerza laboral digital</h2>
+    <p>Agende un diagnóstico sin costo. Nuestro equipo evaluará qué roles de IA generan mayor retorno para su empresa.</p>
+    <a href="https://wa.me/51946736815?text=Hola,%20vengo%20de%20tuempleadoia.org%20y%20quiero%20un%20diagn%C3%B3stico" class="btn">Agendar por WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:16px">TuEmpleado<span>IA</span></div>
+        <p>Fuerza laboral digital para empresas de Latinoamérica. Operación en México, Perú, Costa Rica y Colombia.</p>
+      </div>
+      <div><h4>Soluciones</h4><a href="#equipo">Project Manager IA</a><a href="#equipo">Logística IA</a><a href="#equipo">Contabilidad IA</a><a href="#equipo">Recursos Humanos IA</a></div>
+      <div><h4>Recursos</h4><a href="#proceso">Metodología</a><a href="#equipo">Casos de uso</a><a href="#contacto">Contacto</a></div>
+      <div><h4>Contacto</h4><a href="https://wa.me/51946736815">WhatsApp: +51 946 736 815</a><a href="mailto:contacto@tuempleadoia.org">contacto@tuempleadoia.org</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 TuEmpleadoIA · tuempleadoia.org</span>
+      <span>México · Perú · Costa Rica · Colombia</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
